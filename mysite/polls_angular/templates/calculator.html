@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+{% load render_bundle from webpack_loader %}
+
+{% block stylesheets %}
+    {{ block.super }}
+    <base href="/polls_angular/calculator">
+{% endblock stylesheets %}
+
+{% block content %}
+
+    <h1>Local Library Angular calculator</h1>
+    <h2>Dynamic content</h2>
+    <div class="bd-example-row bd-example-row-flex-cols">
+        <p>
+            <app-root></app-root>
+        </p>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    {% render_bundle 'main' 'js'  %}
+    {% render_bundle 'polyfills' 'js'  %}
+    {% render_bundle 'runtime' 'js'  %}
+    {% render_bundle 'styles' 'js'  %}
+    {% render_bundle 'vendor' 'js'  %}
+
+{% endblock javascripts %}

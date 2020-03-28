@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+{% load render_bundle from webpack_loader %}
+
+{% block stylesheets %}
+    {{ block.super }}
+    <base href="/polls_angular/coronavirus">
+{% endblock stylesheets %}
+
+{% block content %}
+    <h3>Local Library Angular coronavirus</h3>
+    <h3>Dynamic content</h3>
+    <app-root></app-root>
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    {% render_bundle 'main' 'js' 'CORONAVIRUS' %}
+    {% render_bundle 'polyfills' 'js' 'CORONAVIRUS' %}
+    {% render_bundle 'runtime' 'js' 'CORONAVIRUS' %}
+    {% render_bundle 'styles' 'js' 'CORONAVIRUS' %}
+    {% render_bundle 'vendor' 'js' 'CORONAVIRUS' %}
+
+{% endblock javascripts %}

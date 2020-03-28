@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+{% load render_bundle from webpack_loader %}
+
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+
+{% block content %}
+    <h2>Dynamic content</h2>
+    <div class="bd-example-row bd-example-row-flex-cols">
+        <p>
+
+        </p>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+
+{% endblock javascripts %}
